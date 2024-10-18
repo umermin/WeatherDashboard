@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <img src="assets/logo1.png" alt="Weather App Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#tables">Tables</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Weather Widget -->
+            <section id="weather-widget" class="widget">
+                <h2>Weather in <span id="city-name">City</span></h2>
+                <div class="weather-info">
+                    <p id="temp">Temperature: --°C</p>
+                    <p id="description">Description: --</p>
+                    <img id="weather-icon" src="assets/logo.png" alt="Weather Icon">
+                </div>
+                <input type="text" id="city-input" placeholder="Enter city name">
+                <button id="get-weather-btn">Get Weather</button>
+            </section>
+
+            <!-- Charts Section -->
+            <section id="charts">
+                <h2>Weather Forecast (Next 5 Days)</h2>
+                <canvas id="barChart"></canvas>
+                <canvas id="doughnutChart"></canvas>
+                <canvas id="lineChart"></canvas>
+            </section>
+
+            <!-- Weather Table -->
+            <section id="weather-table">
+                <h2>5-Day Weather Forecast Table</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Temperature</th>
+                            <th>Condition</th>
+                        </tr>
+                    </thead>
+                    <tbody id="forecast-table">
+                        <!-- Dynamic rows will be inserted here -->
+                    </tbody>
+                </table>
+                <div id="pagination">
+                    <button id="prev-btn">Previous</button>
+                    <button id="next-btn">Next</button>
+                </div>
+            </section>
+
+            <!-- Chatbot -->
+            <section id="chatbot">
+                <h2>Ask Me Anything</h2>
+                <input type="text" id="chat-input" placeholder="Ask me a question...">
+                <button id="send-chat-btn">Send</button>
+                <div id="chat-response"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>
